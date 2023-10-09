@@ -33,7 +33,7 @@ class CommentController extends Controller
 //            return back()->with('error', 'Unauthorize');
 //        }
 
-        if(Gate::denies('comment-delete', $comment)) {
+        if (Gate::denies('comment-delete', $comment)) {
             return back()->with('error', 'Unauthorize');
         }
         $comment->delete();
