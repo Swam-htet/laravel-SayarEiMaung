@@ -26,10 +26,10 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-success"
-                           href="{{ url('/articles/add') }}">
-                            + Add Article
-                        </a>
+                        @auth
+                            <a class="nav-link text-success"
+                               href="{{ url('/articles/add') }}">+ Add Article</a>
+                        @endauth
                     </li>
                 </ul>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

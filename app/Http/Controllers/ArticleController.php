@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'detail']);
+    }
+
     // index
     public function index()
     {
@@ -31,9 +36,10 @@ class ArticleController extends Controller
     public function add()
     {
         $data = [
-            ["id" => 1, "name" => "News"],
-            ["id" => 2, "name" => "Tech"],
+            [ "id" => 1, "name" => "News" ],
+            [ "id" => 2, "name" => "Tech" ],
         ];
+
         return view('articles.add', ["categories" => $data]);
 
     }
